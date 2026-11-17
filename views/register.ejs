@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+  <div class="col-lg-6 col-md-8">
+    <div class="card auth-card">
+      <div class="card-body p-4 p-md-5">
+        <div class="text-center mb-4">
+          <div class="brand-icon mb-3 mx-auto">
+            <i class="fa-solid fa-user-plus fa-xl"></i>
+          </div>
+          <h1 class="h3 fw-bold">Create Account</h1>
+          <p class="text-secondary mb-0">Register to start using the app.</p>
+        </div>
+
+        <%- include("./partials/messages") %>
+
+        <form action="/users/register" method="POST">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-control form-control-lg"
+              placeholder="Enter your name"
+              value="<%= typeof name != 'undefined' ? name : '' %>"
+              autocomplete="name"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control form-control-lg"
+              placeholder="you@example.com"
+              value="<%= typeof email != 'undefined' ? email : '' %>"
+              autocomplete="email"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control form-control-lg"
+              placeholder="Create a password"
+              autocomplete="new-password"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="password2" class="form-label">Confirm Password</label>
+            <input
+              type="password"
+              id="password2"
+              name="password2"
+              class="form-control form-control-lg"
+              placeholder="Confirm your password"
+              autocomplete="new-password"
+            />
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-lg">Register</button>
+          </div>
+        </form>
+
+        <p class="text-center text-secondary mt-4 mb-0">
+          Already have an account? <a href="/users/login" class="fw-semibold">Login</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
